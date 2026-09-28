@@ -10,7 +10,7 @@ export default defineConfig({
     lib: {
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
       formats: ['es'],
-      fileName: () => 'aditify-ui.js',
+      fileName: () => 'pebble-ui.js',
       cssFileName: 'styles',
     },
     rollupOptions: { external: ['vue', 'reka-ui', '@lucide/vue'] },

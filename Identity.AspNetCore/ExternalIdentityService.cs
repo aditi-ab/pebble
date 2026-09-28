@@ -11,14 +11,14 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public sealed class ExternalIdentityService(
     IHttpClientFactory httpClientFactory,
     IDataProtectionProvider dataProtectionProvider,
     IOptions<AdminIdentityOptions> options) : IExternalIdentityService
 {
-    private readonly IDataProtector stateProtector = dataProtectionProvider.CreateProtector("Aditify.Identity.OidcState.v1");
+    private readonly IDataProtector stateProtector = dataProtectionProvider.CreateProtector("Pebble.Identity.OidcState.v1");
 
     public Task<ExternalAuthenticationResult?> AuthenticatePasswordAsync(AdminIdentityProvider provider,
         string username, string password, CancellationToken cancellationToken)
@@ -114,8 +114,8 @@ public sealed class ExternalIdentityService(
         }
     }
 
-    public string ProtectSecret(string secret) => dataProtectionProvider.CreateProtector("Aditify.Identity.ProviderSecret.v1").Protect(secret);
-    private string UnprotectSecret(AdminIdentityProvider provider) => string.IsNullOrEmpty(provider.ProtectedSecret) ? string.Empty : dataProtectionProvider.CreateProtector("Aditify.Identity.ProviderSecret.v1").Unprotect(provider.ProtectedSecret);
+    public string ProtectSecret(string secret) => dataProtectionProvider.CreateProtector("Pebble.Identity.ProviderSecret.v1").Protect(secret);
+    private string UnprotectSecret(AdminIdentityProvider provider) => string.IsNullOrEmpty(provider.ProtectedSecret) ? string.Empty : dataProtectionProvider.CreateProtector("Pebble.Identity.ProviderSecret.v1").Unprotect(provider.ProtectedSecret);
 
     private ExternalAuthenticationResult? AuthenticateLdap(AdminIdentityProvider provider, string username,
         string password)

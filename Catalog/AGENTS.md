@@ -1,11 +1,11 @@
-# Aditify Catalog
+# Pebble Catalog
 
-These instructions apply to the standalone `@aditify/catalog` workspace.
+These instructions apply to the standalone `@pebble/catalog` workspace.
 
 ## Package boundary
 
-- Consume Aditify only through the public `@aditify/ui` package entry points and `@aditify/ui/styles.css`. Never import from `../Ui/src`, `../Ui/dist`, or another internal UI path.
-- Keep catalog routes, metadata, examples, styles, and tests inside this workspace. Catalog code must never be exported by or bundled into `@aditify/ui`.
+- Consume Pebble only through the public `@pebble/ui` package entry points and `@pebble/ui/styles.css`. Never import from `../Ui/src`, `../Ui/dist`, or another internal UI path.
+- Keep catalog routes, metadata, examples, styles, and tests inside this workspace. Catalog code must never be exported by or bundled into `@pebble/ui`.
 - Keep this package private. It is a development and documentation application, not a published npm package.
 
 ## Component documentation
@@ -22,13 +22,13 @@ These instructions apply to the standalone `@aditify/catalog` workspace.
 
 ## Catalog UI
 
-- Use the native ShadCN Vue components exported by `@aditify/ui` for catalog controls and visual surfaces. Use ShadCN semantic tokens and semantic HTML for document structure and layout.
+- Use the native ShadCN Vue components exported by `@pebble/ui` for catalog controls and visual surfaces. Use ShadCN semantic tokens and semantic HTML for document structure and layout.
 - Preserve grouped navigation, stable hash routes, responsive mobile navigation, semantic heading order, keyboard operation, visible focus, accessible names, sufficient contrast, and reduced-motion behavior.
 - Keep all user-facing catalog content in English until a catalog localization strategy is introduced.
 - Do not use em dashes in literal user-facing text.
 
 ## Validation
 
-- Build `@aditify/ui` before running the catalog in isolation because the catalog deliberately consumes the package's built public exports.
+- Build `@pebble/ui` before running the catalog in isolation because the catalog deliberately consumes the package's built public exports.
 - After catalog changes, run `yarn lint:fix`, `yarn type-check`, `yarn test`, and `yarn build` from this workspace.
 - When production UI code also changes, run the UI package's type-check, tests, and build before validating the catalog.

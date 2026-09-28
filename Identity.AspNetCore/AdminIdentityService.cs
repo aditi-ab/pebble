@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public sealed class AdminIdentityService(
     IAdminIdentityStore store,

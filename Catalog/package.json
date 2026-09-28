@@ -1,5 +1,5 @@
 {
-  "name": "@aditify/catalog",
+  "name": "@pebble/catalog",
   "type": "module",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +13,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@aditify/ui": "0.1.0",
+    "@pebble/ui": "0.1.0",
     "vue": "^3.5.41",
     "vue-router": "^4.6.3"
   },

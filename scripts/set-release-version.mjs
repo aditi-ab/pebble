@@ -18,5 +18,5 @@ await updatePackage('Ui/package.json', (packageJson) => {
 
 await updatePackage('Identity/package.json', (packageJson) => {
   packageJson.version = version
-  packageJson.devDependencies['@aditify/ui'] = version
+  packageJson.devDependencies['@pebble/ui'] = version
 })

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DialogPosition } from '@aditify/ui';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Alert, AlertDescription, Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, ConfigProvider, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Field, FieldDescription, FieldLabel, Input, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Table, TableBody, TableCell, TableEmpty, TableHead, TableHeader, TableRow, Tabs, TabsContent, TabsList, TabsTrigger, TagsInput, TagsInputInput, TagsInputItem, TagsInputItemDelete, TagsInputItemText, Textarea } from '@aditify/ui';
+import type { DialogPosition } from '@pebble/ui';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Alert, AlertDescription, Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, ConfigProvider, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Field, FieldDescription, FieldLabel, Input, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Table, TableBody, TableCell, TableEmpty, TableHead, TableHeader, TableRow, Tabs, TabsContent, TabsList, TabsTrigger, TagsInput, TagsInputInput, TagsInputItem, TagsInputItemDelete, TagsInputItemText, Textarea } from '@pebble/ui';
 import { ref } from 'vue';
 
-const dark = ref(localStorage.getItem('aditify-catalog-theme') === 'dark');
+const dark = ref(localStorage.getItem('pebble-catalog-theme') === 'dark');
 const dialogOpen = ref(false);
 const dialogPosition = ref<DialogPosition>('top');
 const notifications = ref(true);
@@ -14,7 +14,7 @@ function setTheme(value: boolean) {
   dark.value = value;
   document.documentElement.classList.toggle('dark', value);
   document.documentElement.style.colorScheme = value ? 'dark' : 'light';
-  localStorage.setItem('aditify-catalog-theme', value ? 'dark' : 'light');
+  localStorage.setItem('pebble-catalog-theme', value ? 'dark' : 'light');
 }
 setTheme(dark.value);
 </script>
@@ -33,7 +33,7 @@ setTheme(dark.value);
         <header>
           <Badge variant="secondary">
             Nova
-          </Badge><h1>Native component catalog</h1><p>Stock ShadCN Vue components with Aditi's indigo actions and legacy blue-slate dark surfaces.</p>
+          </Badge><h1>Native component catalog</h1><p>Stock ShadCN Vue components with Pebble's indigo actions and legacy blue-slate dark surfaces.</p>
         </header>
 
         <section id="foundations">

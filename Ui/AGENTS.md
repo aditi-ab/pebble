@@ -1,6 +1,6 @@
-# Aditify UI
+# Pebble UI
 
-These instructions apply to the public `@aditify/ui` package.
+These instructions apply to the public `@pebble/ui` package.
 
 ## Validation
 

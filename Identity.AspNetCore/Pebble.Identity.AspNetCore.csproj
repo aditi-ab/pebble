@@ -3,12 +3,14 @@
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <PackageId>Aditify.Identity.AspNetCore</PackageId>
+        <PackageId>Pebble.Identity.AspNetCore</PackageId>
         <Version>0.1.0</Version>
-        <Authors>Aditi</Authors>
+        <Authors>Pebble contributors</Authors>
+        <RepositoryUrl>https://github.com/aditi-ab/pebble</RepositoryUrl>
+        <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+        <PathMap>$(MSBuildProjectDirectory)=/_/Pebble.Identity.AspNetCore</PathMap>
         <Description>Reusable administration identity services and endpoints for ASP.NET Core applications.</Description>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <RepositoryUrl>https://github.com/aditi-ab/aditify</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <IsPackable>true</IsPackable>
     </PropertyGroup>

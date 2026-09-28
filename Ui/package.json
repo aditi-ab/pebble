@@ -1,11 +1,11 @@
 {
-  "name": "@aditify/ui",
+  "name": "@pebble/ui",
   "type": "module",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aditi-ab/aditify.git",
+    "url": "git+https://github.com/aditi-ab/pebble.git",
     "directory": "Ui"
   },
   "publishConfig": {
@@ -17,19 +17,19 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/aditify-ui.js"
+      "import": "./dist/pebble-ui.js"
     },
     "./components": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/aditify-ui.js"
+      "import": "./dist/pebble-ui.js"
     },
     "./composables": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/aditify-ui.js"
+      "import": "./dist/pebble-ui.js"
     },
     "./tokens": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/aditify-ui.js"
+      "import": "./dist/pebble-ui.js"
     },
     "./styles.css": "./dist/styles.css"
   },

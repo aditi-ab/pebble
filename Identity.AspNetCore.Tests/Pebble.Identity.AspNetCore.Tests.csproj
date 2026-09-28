@@ -11,6 +11,6 @@
         <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Identity.AspNetCore\Aditify.Identity.AspNetCore.csproj" />
+        <ProjectReference Include="..\Identity.AspNetCore\Pebble.Identity.AspNetCore.csproj" />
     </ItemGroup>
 </Project>

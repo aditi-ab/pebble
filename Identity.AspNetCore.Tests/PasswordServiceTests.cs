@@ -1,10 +1,10 @@
 using System.Security.Cryptography;
 using System.Text;
-using Aditify.Identity;
+using Pebble.Identity;
 using Microsoft.AspNetCore.Identity;
 using Xunit;
 
-namespace Aditify.Identity.AspNetCore.Tests;
+namespace Pebble.Identity.AspNetCore.Tests;
 
 public sealed class PasswordServiceTests
 {

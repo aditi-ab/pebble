@@ -1,13 +1,13 @@
-# Aditify.Identity.AspNetCore
+# Pebble.Identity.AspNetCore
 
-ASP.NET Core identity services and minimal API endpoints matching `@aditify/identity`.
+ASP.NET Core identity services and minimal API endpoints matching `@pebble/identity`.
 
 ## Registration
 
 ```csharp
-using Aditify.Identity;
+using Pebble.Identity;
 
-builder.Services.AddAditifyIdentity(options =>
+builder.Services.AddPebbleIdentity(options =>
 {
     options.BasePath = "/admin";
     options.AdministratorPolicy = "Administrator";
@@ -17,7 +17,7 @@ builder.Services.AddScoped<IAdminIdentityStore, ApplicationIdentityStore>();
 builder.Services.AddSingleton<IProductRoleCatalog, ApplicationRoleCatalog>();
 builder.Services.AddScoped<IAdminIdentityAuditSink, ApplicationIdentityAuditSink>();
 
-app.MapAditifyIdentity();
+app.MapPebbleIdentity();
 ```
 
 The host application owns persistence by implementing `IAdminIdentityStore`. It also supplies its assignable roles through `IProductRoleCatalog`. Registering an audit sink is optional, but recommended. The default sink discards audit events.
@@ -27,7 +27,7 @@ The host application owns persistence by implementing `IAdminIdentityStore`. It 
 `BasePath` and every route template can be changed during registration:
 
 ```csharp
-builder.Services.AddAditifyIdentity(options =>
+builder.Services.AddPebbleIdentity(options =>
 {
     options.BasePath = "/control-plane";
     options.AntiforgeryHeader = "X-Antiforgery";
@@ -42,7 +42,7 @@ builder.Services.AddAditifyIdentity(options =>
 
 Keep `{providerId}` in both external authentication templates, `{id:guid}` in user templates, and `{id}` in provider templates. Configure the matching paths in `createIdentityApi` when the browser client does not use the defaults.
 
-`MapAditifyIdentity()` maps authentication, external authentication, and management routes. Hosts that provide their own local authentication endpoints can instead call `MapAditifyIdentityExternalAuthentication()` and `MapAditifyIdentityManagement()` separately.
+`MapPebbleIdentity()` maps authentication, external authentication, and management routes. Hosts that provide their own local authentication endpoints can instead call `MapPebbleIdentityExternalAuthentication()` and `MapPebbleIdentityManagement()` separately.
 
 ## Security behavior
 
@@ -50,4 +50,4 @@ The package uses ASP.NET Core data protection for provider secrets and external-
 
 Persist data-protection keys outside ephemeral containers. Changing data-protection purposes or losing the key ring invalidates protected provider secrets and active external-login state.
 
-See the `@aditify/identity` README for the complete default HTTP contract and custom client implementations.
+See the `@pebble/identity` README for the complete default HTTP contract and custom client implementations.

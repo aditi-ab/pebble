@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public interface IAdminIdentityStore
 {

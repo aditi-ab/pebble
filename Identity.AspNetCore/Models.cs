@@ -1,4 +1,4 @@
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public enum IdentityProviderType
 {
@@ -52,13 +52,13 @@ public sealed class AdminIdentityOptions
 {
     public string BasePath { get; set; } = "/admin";
     public AdminIdentityEndpointOptions Endpoints { get; } = new();
-    public string CookieScheme { get; set; } = "Aditify.Identity";
-    public string CookieName { get; set; } = "__Host-Aditify.Identity";
+    public string CookieScheme { get; set; } = "Pebble.Identity";
+    public string CookieName { get; set; } = "__Host-Pebble.Identity";
     public string AdministratorPolicy { get; set; } = "Administrator";
     public string AdministratorRole { get; set; } = "Administrator";
     public string AntiforgeryHeader { get; set; } = "X-CSRF-TOKEN";
-    public string SecurityStampClaim { get; set; } = "aditify.security_stamp";
-    public string MustChangePasswordClaim { get; set; } = "aditify.must_change_password";
+    public string SecurityStampClaim { get; set; } = "pebble.security_stamp";
+    public string MustChangePasswordClaim { get; set; } = "pebble.must_change_password";
     public bool RegisterCookieScheme { get; set; } = true;
     public TimeSpan SessionLifetime { get; set; } = TimeSpan.FromHours(8);
 

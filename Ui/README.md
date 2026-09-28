@@ -1,4 +1,4 @@
-# @aditify/ui
+# @pebble/ui
 
 Native ShadCN Vue components generated with the default Nova style and the Reka UI base.
 
@@ -7,8 +7,8 @@ Native ShadCN Vue components generated with the default Nova style and the Reka 
 Import the shared stylesheet once, then import only the compound primitives a screen uses:
 
 ```ts
-import { Button, Dialog, DialogContent, Input } from '@aditify/ui';
-import '@aditify/ui/styles.css';
+import { Button, Dialog, DialogContent, Input } from '@pebble/ui';
+import '@pebble/ui/styles.css';
 ```
 
 The public API mirrors the generated folders under `src/components/ui`. Components keep their stock ShadCN markup, variants, portal behavior, accessibility, and transitions. Product screens compose these primitives directly and use semantic HTML plus Tailwind utilities for layout.

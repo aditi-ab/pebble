@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public static class EndpointExtensions
 {
-    public static IEndpointRouteBuilder MapAditifyIdentity(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapPebbleIdentity(this IEndpointRouteBuilder endpoints)
     {
         var options = endpoints.ServiceProvider.GetRequiredService<IOptions<AdminIdentityOptions>>().Value;
         var auth = endpoints.MapGroup(options.AuthenticationBasePath);
@@ -19,10 +19,10 @@ public static class EndpointExtensions
         auth.MapPost(options.Endpoints.ChangePassword, ChangePasswordAsync).RequireAuthorization();
         MapExternalAuthentication(auth, options.Endpoints);
 
-        return endpoints.MapAditifyIdentityManagement();
+        return endpoints.MapPebbleIdentityManagement();
     }
 
-    public static IEndpointRouteBuilder MapAditifyIdentityExternalAuthentication(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapPebbleIdentityExternalAuthentication(this IEndpointRouteBuilder endpoints)
     {
         var options = endpoints.ServiceProvider.GetRequiredService<IOptions<AdminIdentityOptions>>().Value;
         MapExternalAuthentication(endpoints.MapGroup(options.AuthenticationBasePath), options.Endpoints);
@@ -35,7 +35,7 @@ public static class EndpointExtensions
         auth.MapGet(paths.ExternalCallback, CompleteExternalAsync).AllowAnonymous();
     }
 
-    public static IEndpointRouteBuilder MapAditifyIdentityManagement(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapPebbleIdentityManagement(this IEndpointRouteBuilder endpoints)
     {
         var options = endpoints.ServiceProvider.GetRequiredService<IOptions<AdminIdentityOptions>>().Value;
         var identity = endpoints.MapGroup(options.ManagementBasePath)

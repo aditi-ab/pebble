@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddAditifyIdentity(this IServiceCollection services,
+    public static IServiceCollection AddPebbleIdentity(this IServiceCollection services,
         Action<AdminIdentityOptions>? configure = null)
     {
         var options = new AdminIdentityOptions();

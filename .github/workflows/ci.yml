@@ -36,9 +36,9 @@ jobs:
       - name: Validate JavaScript packages
         run: yarn lint && yarn type-check && yarn test && yarn build && yarn build:catalog
       - name: Test ASP.NET Core package
-        run: dotnet test Identity.AspNetCore.Tests/Aditify.Identity.AspNetCore.Tests.csproj -c Release
+        run: dotnet test Identity.AspNetCore.Tests/Pebble.Identity.AspNetCore.Tests.csproj -c Release
       - name: Pack ASP.NET Core package
-        run: dotnet pack Identity.AspNetCore/Aditify.Identity.AspNetCore.csproj -c Release -o artifacts
+        run: dotnet pack Identity.AspNetCore/Pebble.Identity.AspNetCore.csproj -c Release -o artifacts
 
   container:
     needs: validate
@@ -60,7 +60,7 @@ jobs:
         id: metadata
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/aditify-catalog
+          images: ghcr.io/${{ github.repository_owner }}/pebble-catalog
           tags: |
             type=ref,event=branch
             type=ref,event=tag
@@ -74,8 +74,8 @@ jobs:
           push: ${{ github.event_name == 'workflow_dispatch' }}
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
-          cache-from: type=gha,scope=aditify-catalog
-          cache-to: type=gha,mode=max,scope=aditify-catalog
+          cache-from: type=gha,scope=pebble-catalog
+          cache-to: type=gha,mode=max,scope=pebble-catalog
 
   publish-npm:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master'
@@ -97,6 +97,6 @@ jobs:
       - name: Set release version
         run: node scripts/set-release-version.mjs "$RELEASE_VERSION"
       - name: Publish UI
-        run: npm view "@aditify/ui@$RELEASE_VERSION" version >/dev/null 2>&1 || npm publish ./Ui --access public
+        run: npm view "@pebble/ui@$RELEASE_VERSION" version >/dev/null 2>&1 || npm publish ./Ui --access public
       - name: Publish identity
-        run: npm view "@aditify/identity@$RELEASE_VERSION" version >/dev/null 2>&1 || npm publish ./Identity --access public
+        run: npm view "@pebble/identity@$RELEASE_VERSION" version >/dev/null 2>&1 || npm publish ./Identity --access public

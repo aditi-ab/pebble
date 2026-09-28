@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IdentityApi, IdentityStatus } from './types';
-import { Alert, AlertDescription, Avatar, AvatarFallback, Button, Card, CardContent, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Separator } from '@aditify/ui';
+import { Alert, AlertDescription, Avatar, AvatarFallback, Button, Card, CardContent, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Separator } from '@pebble/ui';
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { identityMessages } from './messages';

@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 
-namespace Aditify.Identity;
+namespace Pebble.Identity;
 
 public sealed class AdminIdentityPasswordService(IPasswordHasher<AdminIdentityUser> hasher)
     : IAdminIdentityPasswordService

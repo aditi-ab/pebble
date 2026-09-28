@@ -1,29 +1,28 @@
-# @aditify/identity
+# @pebble/identity
 
-Reusable Vue 3 sign-in and identity-management screens for `@aditify/ui`. The components accept an `IdentityApi`, so the backend transport and URL structure remain application-controlled.
+Reusable Vue 3 sign-in and identity-management screens for `@pebble/ui`. The components accept an `IdentityApi`, so the backend transport and URL structure remain application-controlled.
 
 ## Installation
 
 ```sh
-yarn add @aditify/identity @aditify/ui vue vue-i18n
+yarn add @pebble/identity @pebble/ui vue vue-i18n
 ```
 
-Import both packages' styles and register the base UI plugin:
+Import both packages' styles at the application entry point. Import UI components by name where they are used:
 
 ```ts
-import AditifyUi from '@aditify/ui';
-import '@aditify/ui/styles.css';
-import '@aditify/identity/styles.css';
+import '@pebble/ui/styles.css';
+import '@pebble/identity/styles.css';
 
-createApp(App).use(AditifyUi).use(i18n).mount('#app');
+createApp(App).use(i18n).mount('#app');
 ```
 
 ## Default REST client
 
-`createIdentityApi()` uses `/admin` as its base URL and the standard Aditify route contract:
+`createIdentityApi()` uses `/admin` as its base URL and the standard Pebble route contract:
 
 ```ts
-import { createIdentityApi } from '@aditify/identity';
+import { createIdentityApi } from '@pebble/identity';
 
 const identity = createIdentityApi();
 ```
@@ -54,7 +53,7 @@ The legacy `createIdentityApi('/admin')` form remains supported.
 For GraphQL, RPC, or another REST shape, implement `IdentityApi` directly and pass it to `IdentitySignIn` or `IdentityManagement`. The UI does not inspect URLs or perform requests itself.
 
 ```ts
-import type { IdentityApi } from '@aditify/identity';
+import type { IdentityApi } from '@pebble/identity';
 
 export const identityApi: IdentityApi = {
   status: () => client.getSession(),
